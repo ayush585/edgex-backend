@@ -11,12 +11,13 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
+// Test route
 app.get("/", (req, res) => {
     res.send("🟢 Groq Proxy is Running!");
 });
 
-
-app.post("/api/groq", async (req, res) => {
+// 🔁 This must match your frontend call
+app.post("/groq", async (req, res) => {
     try {
         const response = await axios.post(
             "https://api.groq.com/openai/v1/chat/completions",
