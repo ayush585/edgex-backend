@@ -11,6 +11,11 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
+app.get("/", (req, res) => {
+    res.send("🟢 Groq Proxy is Running!");
+});
+
+
 app.post("/api/groq", async (req, res) => {
     try {
         const response = await axios.post(
