@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: edgex-groq-proxy
+    env: node
+    plan: free
+    region: oregon
+    buildCommand: npm install
+    startCommand: npm start
+    runtime: node
+    repo: https://github.com/sussyba390/edgex
+    branch: main
+    rootDir: backend
+    autoDeploy: true
+    envVars:
+      - key: VITE_GROQ_API_KEY
+        sync: false
