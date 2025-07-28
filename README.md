@@ -3,6 +3,7 @@
 ![Badge](https://img.shields.io/badge/Backend-🚀%20LLM%20Proxy%20for%20Edgex-blue)
 ![Badge](https://img.shields.io/badge/GSSoC%202025-💡%20Official%20Project-purple)
 ![Badge](https://img.shields.io/badge/MIT-License-green)
+[discord](https://discord.gg/rnfEbBPBgE)
 
 > ⚙️ Lightweight Express.js backend to securely proxy requests to the **Groq API** for blazing-fast LLM-powered responses — used by **Edgex Frontend** (MoodMirror + CareerCrack).
 
