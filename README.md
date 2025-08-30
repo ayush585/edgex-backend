@@ -45,21 +45,28 @@ Create a `.env` file in the root:
 GROQ_API_KEY=your_groq_key_here
 PORT=5000
 💻 Run Locally
-bash
-Copy
-Edit
+```bash
+
 git clone https://github.com/ayush585/edgex-backend
+```
+```bash
 cd edgex-backend
+```
+```bash
 npm install
+```
+```bash
 npm run dev  # or: node groq-proxy.js
-📡 API Endpoint Details
+```
+
+## 📡 API Endpoint Details
 POST /api/groq
+```
 
 Request Body:
 
-json
-Copy
-Edit
+```json
+
 {
   "model": "llama3-8b-8192",
   "messages": [
@@ -68,18 +75,19 @@ Edit
   ],
   "temperature": 0.75
 }
+```
 Headers (auto-handled):
 
-pgsql
-Copy
-Edit
+```pgsql
+
 Authorization: Bearer <your GROQ_API_KEY>
 Content-Type: application/json
+```
+
 Response Example:
 
-json
-Copy
-Edit
+
+```json
 {
   "choices": [
     {
@@ -89,61 +97,70 @@ Edit
     }
   ]
 }
-🧠 Why This Matters
+```
+## 🧠 Why This Matters
 Without this proxy backend:
 
-❌ The Groq API key would be exposed in frontend
+1. The Groq API key would be exposed in frontend
 
-🌐 Cross-origin (CORS) errors would break requests
+2. 🌐 Cross-origin (CORS) errors would break requests
 
-🔐 No centralized control over rate limits or auth
+3. 🔐 No centralized control over rate limits or auth
 
 This backend is your secure bridge between frontend UI and powerful LLMs!
 
-📁 File Structure
-bash
-Copy
-Edit
+## 📁 File Structure
+```bash
 groq-proxy.js     # Main backend app
 .env              # API keys (ignored in git)
 package.json      # Dependencies and scripts
-🛠️ Monitoring & Uptime Tips
-Use UptimeRobot to ping your backend every 5 mins to keep it awake 🚀
+```
 
-Monitor logs on Render Dashboard
+## 🛠️ Monitoring & Uptime Tips:
 
-🤝 Contributing to Edgex Backend (GSSoC 2025)
+1. Use UptimeRobot to ping your backend every 5 mins to keep it awake 🚀
+
+2. Monitor logs on Render Dashboard.
+
+## 🤝 Contributing to Edgex Backend (GSSoC 2025)
+
 We welcome contributors via GirlScript Summer of Code 2025 🙌
 You don’t need to be a backend pro — we’ll guide you through!
 
-✅ Good First Issues:
-Add rate limiting
+## ✅ Good First Issues:
+1. Add rate limiting
 
-Add health check route
+2. Add health check route
 
-Setup tests for the endpoint
+3. Setup tests for the endpoint
 
-Convert to TypeScript (optional)
+3. Convert to TypeScript (optional)
 
-Steps to Contribute:
-Fork the repo
+## Steps to Contribute:
+1. Fork the repo
 
-Create a new branch: feature/my-feature
+2. Create a new branch: feature/my-feature
 
-Make your changes 🚀
+3. Make your changes 🚀
 
-Open a PR with a clear description
+4. Open a PR with a clear description
 
-👨‍💻 Contributors
-Name	Role	GitHub
-Ayushman Mukherjee	Project Admin	@ayush585
-Aishika Biswas Contributor [github](https://github.com/aishikabiswas)
-You?	Contributor	⭐ Fork, star & submit a PR!
 
-💬 Contact
+## 👨‍💻 Contributors
+
+| Name                | Role          | GitHub Profile |
+|---------------------|--------------|----------------|
+| **Ayushman Mukherjee** | Project Admin | [@ayush585](https://github.com/ayush585) |
+| **Aishika Biswas**     | Contributor   | [@aishikabiswas](https://github.com/aishikabiswas) |
+| **You?**               | Contributor   | ⭐ Fork, star & submit a PR! |
+
+
+## 💬 Contact
 📧 Email: ayushmanmukherjee12@gmail.com
+
 💼 LinkedIn: Ayushman Mukherjee
+
 🎯 Discord: Sabucha | PA on GSSoC server
 
-🛡️ License
+## 🛡️ License
 MIT — Open to all learners, dreamers, and devs 💖
