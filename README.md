@@ -75,6 +75,7 @@ npm run dev   # or: node groq-proxy.js
   ],
   "temperature": 0.75
 }
+```
 
 ### Headers (auto-handled)
 
