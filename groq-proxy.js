@@ -3,13 +3,26 @@ import express from "express";
 import dotenv from "dotenv";
 import axios from "axios";
 import cors from "cors";
+import rateLimit from "express-rate-limit";
 
 dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
+const limiter = rateLimit({
+  windowMs: 60 * 1000,
+  max: process.env.RATE_LIMIT || 20,
+  message: { error: "Too many requests, please try again later" },
+  standardHeaders: true,
+  legacyHeaders: false,
+});
+
+
 app.use(cors());
 app.use(express.json());
+
+app.use("/groq", limiter);
+
 
 // Test route
 app.get("/", (req, res) => {
